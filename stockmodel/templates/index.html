@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simran - Professional Artist</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Roboto:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -16,27 +16,27 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #fffaf5;
+      line-height: 1.7;
+      color: #2c1f1a;
+      background: #fdfdfd;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 15px;
     }
 
-    /* Navbar - Pink Theme */
+    /* Navbar */
     .navbar {
       position: fixed;
       top: 0;
       width: 100%;
-      background: linear-gradient(to right, #ff9ec1, #ff69b4);
-      backdrop-filter: blur(8px);
+      background: linear-gradient(to right, #a68a64, #8b7355);
+      backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 15px 0;
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      padding: 14px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
 
     .navbar .container {
@@ -48,28 +48,34 @@
     .logo {
       color: white;
       font-family: 'Dancing Script', cursive;
-      font-size: 2.8rem;
-      letter-spacing: 3px;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      font-size: 2.6rem;
+      letter-spacing: 2px;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 30px;
+      gap: 28px;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.1rem;
-      transition: color 0.3s, transform 0.3s;
+      font-size: 1.05rem;
+      transition: all 0.3s;
     }
 
     .nav-links a:hover {
-      color: #fff0f5;
-      transform: scale(1.1);
+      color: #f5f0e6;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
     }
 
     /* Hero */
@@ -87,65 +93,62 @@
     .hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(255, 105, 180, 0.35);
+      inset: 0;
+      background: rgba(139, 115, 85, 0.45);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
+      padding: 0 20px;
     }
 
     .hero-content h2 {
       font-family: 'Dancing Script', cursive;
       font-size: 5.5rem;
       margin-bottom: 1rem;
-      text-shadow: 3px 3px 15px rgba(0,0,0,0.6);
+      text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
     }
 
     .hero-content p {
       font-size: 1.6rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
     }
 
     .btn {
-      display: inline-block;
-      background: #ff69b4;
+      background: #8b7355;
       color: white;
-      padding: 16px 40px;
-      text-decoration: none;
+      padding: 14px 36px;
       border-radius: 50px;
-      font-weight: bold;
-      font-size: 1.2rem;
+      font-weight: 500;
+      font-size: 1.15rem;
+      text-decoration: none;
+      display: inline-block;
       transition: all 0.4s;
-      box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+      box-shadow: 0 6px 18px rgba(139,115,85,0.4);
     }
 
     .btn:hover {
-      background: #ff1493;
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(255, 20, 147, 0.6);
+      background: #9f866a;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(139,115,85,0.55);
     }
 
     /* Marquee */
     .marquee {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 100%;
+      inset: 0;
       display: flex;
-      animation: moveLeftToRight 20s linear infinite;
+      animation: moveLeftToRight 28s linear infinite;
     }
 
     .marquee img {
       height: 100%;
       width: auto;
-      object-fit: cover;
       flex-shrink: 0;
-      margin-right: 20px;
+      margin-right: 15px;
     }
 
     @keyframes moveLeftToRight {
@@ -153,116 +156,117 @@
       100% { transform: translateX(-50%); }
     }
 
-    .marquee:hover {
-      animation-play-state: paused;
-    }
-
-    /* Gallery - 10 Photos */
+    /* Gallery */
     .gallery {
-      padding: 120px 0;
+      padding: 120px 0 80px;
       background: #fff;
     }
 
     .gallery h2 {
       text-align: center;
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 70px;
-      color: #ff69b4;
+      font-size: 3.2rem;
+      margin-bottom: 60px;
+      color: #8b7355;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 30px;
+      grid-template-columns: 1fr;
+      gap: 28px;
     }
 
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 12px 35px rgba(255, 105, 180, 0.2);
-      transition: transform 0.4s;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      transition: all 0.4s ease;
+      aspect-ratio: 4 / 5;
     }
 
     .gallery-item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(139,115,85,0.25);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s;
+      transition: transform 0.6s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.12);
+      transform: scale(1.08);
     }
 
     .overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(255,105,180,0.8), transparent);
+      inset: 0;
+      background: linear-gradient(to top, rgba(139,115,85,0.9), transparent 40%);
       color: white;
-      padding: 25px;
-      transform: translateY(100%);
-      transition: transform 0.4s;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .gallery-item:hover .overlay {
-      transform: translateY(0);
+      opacity: 1;
     }
 
     /* About */
     .about {
-      padding: 120px 0;
-      background: #fff0f5;
+      padding: 100px 0;
+      background: #faf5f0;
     }
 
     .about h2 {
       text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 70px;
-      color: #ff69b4;
+      font-size: 3rem;
+      margin-bottom: 60px;
+      color: #8b7355;
     }
 
     .about-content {
       display: flex;
-      gap: 70px;
+      flex-direction: column;
+      gap: 50px;
       align-items: center;
-      flex-wrap: wrap;
+    }
+
+    .about-text {
+      max-width: 720px;
+      text-align: center;
     }
 
     .about-text p {
-      margin-bottom: 1.6rem;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.3rem;
     }
 
     .about-image img {
       width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
-      border: 8px solid #fff;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
     }
 
     /* Footer */
     footer {
-      background: linear-gradient(to right, #ff9ec1, #ff69b4);
+      background: linear-gradient(to right, #a68a64, #8b7355);
       color: white;
       text-align: center;
-      padding: 50px 0;
-      margin-top: 80px;
+      padding: 50px 15px;
+      margin-top: 60px;
     }
 
     footer a {
-      color: #fff0f5;
+      color: #f5f0e6;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
+      margin: 0 12px;
     }
 
     footer a:hover {
@@ -271,12 +275,34 @@
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
+      .hero-content h2 { font-size: 5.8rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+      .about-content { flex-direction: row; text-align: left; }
+      .about-text { flex: 1; }
+      .about-image { flex: 1; }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 767px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #8b7355;
+        padding: 20px 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: block; }
       .hero-content h2 { font-size: 4rem; }
       .hero-content p { font-size: 1.3rem; }
-      .nav-links { gap: 20px; font-size: 1rem; }
-      .about-content { flex-direction: column; text-align: center; }
-      .marquee img { margin-right: 10px; }
     }
   </style>
 </head>
@@ -286,6 +312,7 @@
   <nav class="navbar">
     <div class="container">
       <h1 class="logo">Simran</h1>
+      <span class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">&#9776;</span>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#gallery">Gallery</a></li>
@@ -294,7 +321,7 @@
     </div>
   </nav>
 
-  <!-- Home / Hero -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="marquee">
       <img src="https://www.milanartinstitute.com/hubfs/Screenshot_2024-07-01_at_3.58.36_PM.png" alt="Art 1">
@@ -302,8 +329,7 @@
       <img src="https://ik.imagekit.io/theartling/prod/tr:w-1650/products/Product/065d0e64a3514880bf2398126d0bcdca_sw-3815_sh-2501.jpg" alt="Art 3">
       <img src="https://cdn.shopify.com/s/files/1/0551/1125/4191/files/acrylic_paint_abstract_techniques.jpg?v=1668509933" alt="Art 4">
       <img src="https://i.ytimg.com/vi/bzl58NvNttk/maxresdefault.jpg" alt="Art 5">
-      
-      <!-- Duplicate for seamless loop -->
+      <!-- Duplicate -->
       <img src="https://www.milanartinstitute.com/hubfs/Screenshot_2024-07-01_at_3.58.36_PM.png" alt="Art 1">
       <img src="https://thevirtualinstructor.com/blog/wp-content/uploads/2013/08/understanding-abstract-art.jpg" alt="Art 2">
       <img src="https://ik.imagekit.io/theartling/prod/tr:w-1650/products/Product/065d0e64a3514880bf2398126d0bcdca_sw-3815_sh-2501.jpg" alt="Art 3">
@@ -318,56 +344,56 @@
     </div>
   </section>
 
-  <!-- Gallery with 10 Photos -->
+  <!-- Gallery -->
   <section id="gallery" class="gallery">
     <div class="container">
       <h2>My Gallery</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="https://www.singulart.com/images/artworks/v2/cropped/33920/main/zoom/1807683_8a17b3e4f5545132c12cd3753fa6fc97.jpeg" alt="Colorful Emotion">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774271670/IMG-20260323-WA0017.jpg" alt="Artwork 1">
           <div class="overlay"><p>"Colorful Emotion" - Acrylic</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://i.etsystatic.com/23861645/r/il/f37a1c/2907281830/il_fullxfull.2907281830_lrja.jpg" alt="Indian Ethnic Abstract">
+          <img src="https://i.etsystatic.com/23861645/r/il/f37a1c/2907281830/il_fullxfull.2907281830_lrja.jpg" alt="Artwork 2">
           <div class="overlay"><p>"Traditional Flow" - Mixed Media</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://www.memeraki.com/cdn/shop/files/2._Varanasi_Ghat_in_Acrylic_painting_by_Ashish_Kumar_Mishra_1024x.jpg?v=1750322927" alt="Varanasi Ghat">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774271375/IMG-20260323-WA0022_1.jpg" alt="Artwork 3">
           <div class="overlay"><p>"Varanasi Glow" - Acrylic</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://womeninartsnetwork.com/wp-content/uploads/2025/03/Stellar-Essence-pooja-taneja-1024x811.jpeg" alt="Stellar Essence">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774271594/IMG-20260323-WA0013_1.jpg" alt="Artwork 4">
           <div class="overlay"><p>"Stellar Essence" - Abstract Fusion</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://trendyartideas.com/wp-content/uploads/2021/05/Indian-artist-Neeti-Aggarwal.jpg.webp" alt="Human Emotions">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774271496/IMG-20260323-WA0015_1.jpg" alt="Artwork 5">
           <div class="overlay"><p>"Depths of Emotion" - Acrylic</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://www.indigalleria.com/_next/image?url=https%3A%2F%2Fd1cjbiaru95h4n.cloudfront.net%2Fimages%2Fbanner-2.jpg&w=1920&q=75" alt="Abstract Indian">
-          <div class="overlay"><p>"Cultural Harmony" - Mixed</p></div>
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774272563/IMG-20260323-WA0019_1.jpg" alt="Artwork 6">
+          <div class="overlay"><p>"Cultural Harmony" - Mixed Media</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://cdn.shopify.com/s/files/1/0623/3400/9536/files/painting-online.png?v=1751699514" alt="Eternal Love">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774271989/IMG-20260323-WA0018_1.jpg" alt="Artwork 7">
           <div class="overlay"><p>"Eternal Love" - Charcoal & Acrylic</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://doodlewash.com/wp-content/uploads/2022/08/Kedarnath-INDIA_Milind-Bhanji_Watercolor_21x154-Inch.jpg" alt="Kedarnath Watercolor">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774272685/IMG-20260323-WA0027.jpg" alt="Artwork 8">
           <div class="overlay"><p>"Kedarnath Serenity" - Watercolor</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://cdn11.bigcommerce.com/s-x49po/images/stencil/1500x1500/products/122645/289722/1688192471132_IMG_20230701_113948__16036.1688543504.jpg?c=2&imbypass=on" alt="Indian Village">
+          <img src="https://cdn11.bigcommerce.com/s-x49po/images/stencil/1500x1500/products/122645/289722/1688192471132_IMG_20230701_113948__16036.1688543504.jpg?c=2&imbypass=on" alt="Artwork 9">
           <div class="overlay"><p>"Village Life" - Watercolor</p></div>
         </div>
         <div class="gallery-item">
-          <img src="https://i0.wp.com/doodlewash.com/wp-content/uploads/2022/08/Empress-Garden-01_Milind-Bhanji_Watercolor_9x12-Inch.jpg?ssl=1" alt="Empress Garden">
+          <img src="https://i0.wp.com/doodlewash.com/wp-content/uploads/2022/08/Empress-Garden-01_Milind-Bhanji_Watercolor_9x12-Inch.jpg?ssl=1" alt="Artwork 10">
           <div class="overlay"><p>"Empress Garden" - Watercolor</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Me -->
+  <!-- About -->
   <section id="about" class="about">
     <div class="container">
       <h2>About Me</h2>
@@ -379,13 +405,13 @@
           <p><strong>Exhibitions:</strong> Bhopal Art Fair 2024, Indore Creative Expo 2025</p>
           <p><strong>Awards:</strong> State Level Painting Competition - 1st Prize (2023)</p>
           <p>Contact me for commissions, workshops, or collaborations!</p>
-          <p><strong>Phone:</strong> +91 98765 43210</p>
-          <p><strong>Email:</strong> <a href="mailto:simranartist@example.com">simranartist@example.com</a></p>
-          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/simran__arts" target="_blank">@simran__arts</a></p>
-          <a href="mailto:simranartist@example.com" class="btn">Get in Touch</a>
+          <p><strong>Phone:</strong> +91 93112 24600</p>
+          <p><strong>Email:</strong> <a href="mailto:simran.ojha2412@gmail.com">simran.ojha2412@gmail.com</a></p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/artistic_works__" target="_blank">@artistic_works__</a></p>
+          <a href="mailto:simran.ojha2412@gmail.com" class="btn">Get in Touch</a>
         </div>
         <div class="about-image">
-          <img src="https://img.artpal.com/995071/9-20-5-17-5-39-57m.jpg" alt="Simran - Artist Portrait">
+          <img src="https://res.cloudinary.com/dncdjrcmm/image/upload/v1774272778/IMG-20260323-WA0010_1.jpg" alt="Simran - Artist Portrait">
         </div>
       </div>
     </div>
@@ -395,9 +421,9 @@
   <footer>
     <p>© 2026 Simran - Professional Artist. All Rights Reserved.</p>
     <p>
-      <a href="tel:+919876543210">+91 98765 43210</a> | 
-      <a href="mailto:simranartist@example.com">simranartist@example.com</a> | 
-      <a href="https://www.instagram.com/simran__arts" target="_blank">Instagram</a>
+      <a href="tel:+919311224600">+91 93112 24600</a> | 
+      <a href="mailto:simran.ojha2412@gmail.com">simran.ojha2412@gmail.com</a> | 
+      <a href="https://www.instagram.com/artistic_works__" target="_blank">Instagram</a>
     </p>
   </footer>
 
